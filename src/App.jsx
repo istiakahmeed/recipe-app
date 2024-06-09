@@ -1,7 +1,18 @@
+import { Toaster } from "react-hot-toast";
+import { Route, Routes } from "react-router";
+import Sidebar from "./components/Sidebar";
+import FavoritesPage from "./pages/FavoritesPage";
+import HomePage from "./pages/HomePage";
+
 function App() {
   return (
-    <div>
-      <h1 className="text-4xl">Hello WOrld</h1>
+    <div className="flex">
+      <Sidebar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
+      </Routes>
+      <Toaster />
     </div>
   );
 }
